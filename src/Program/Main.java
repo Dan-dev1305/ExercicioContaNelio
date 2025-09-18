@@ -24,10 +24,15 @@ public class Main {
         System.out.println("Account data");
         System.out.println("Updated account data:");
         System.out.printf("Account %f, Holder: %s, Balance: $ %d", ba.getIdAcount(), ba.getTitularName(), ba.getSaldo());
-
-
-
-
+        System.out.print("Enter a deposit value: ");
+        ba.depositValue(sc.nextDouble());
+        System.out.println("Account data");
+        System.out.println("Updated account data:");
+        System.out.printf("Account %f, Holder: %s, Balance: $ %d", ba.getIdAcount(), ba.getTitularName(), ba.getSaldo());
+        System.out.print("Enter a withdraw value: ");
+        ba.withdraw(sc.nextDouble());
+        System.out.println("Updated account data:");
+        System.out.printf("Account %f, Holder: %s, Balance: $ %d", ba.getIdAcount(), ba.getTitularName(), ba.getSaldo());
 
 
     }
