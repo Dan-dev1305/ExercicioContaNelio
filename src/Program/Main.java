@@ -12,27 +12,32 @@ public class Main {
 
         System.out.print("Enter account nunber: ");
         int idAcount = sc.nextInt();
-        System.out.println("Enter account holder: ");
-        String titularName = sc.nextLine();
+        System.out.print("Enter account holder: ");
+        String  titularName = sc.next();
         BankAcount ba = new BankAcount(idAcount, titularName);
         System.out.print("Is there an initial deposit (y/n)");
-        String initialQuestion = sc.nextLine();
-        if (initialQuestion == "y"){
+        String initialQuestion = sc.next();
+        System.out.println("");
+        if (initialQuestion.equals("y")){
             System.out.println("Enter the initial deposit");
-            ba.initialDeposit = sc.nextDouble();
+            ba.depositValue(sc.nextDouble());
         }
         System.out.println("Account data");
         System.out.println("Updated account data:");
-        System.out.printf("Account %f, Holder: %s, Balance: $ %d", ba.getIdAcount(), ba.getTitularName(), ba.getSaldo());
+        System.out.printf("Account %d, Holder: %s, Balance: $ %.2f", ba.getIdAcount(), ba.getTitularName(), ba.getSaldo());
+        System.out.println("");
+        System.out.println("");
         System.out.print("Enter a deposit value: ");
         ba.depositValue(sc.nextDouble());
         System.out.println("Account data");
         System.out.println("Updated account data:");
-        System.out.printf("Account %f, Holder: %s, Balance: $ %d", ba.getIdAcount(), ba.getTitularName(), ba.getSaldo());
+        System.out.printf("Account %d, Holder: %s, Balance: $ %.2f", ba.getIdAcount(), ba.getTitularName(), ba.getSaldo());
+        System.out.println("");
+        System.out.println("");
         System.out.print("Enter a withdraw value: ");
         ba.withdraw(sc.nextDouble());
         System.out.println("Updated account data:");
-        System.out.printf("Account %f, Holder: %s, Balance: $ %d", ba.getIdAcount(), ba.getTitularName(), ba.getSaldo());
+        System.out.printf("Account %d, Holder: %s, Balance: $ %.2f", ba.getIdAcount(), ba.getTitularName(), ba.getSaldo());
 
 
     }
