@@ -15,9 +15,20 @@ public class Main {
         System.out.println("Enter account holder: ");
         String titularName = sc.nextLine();
         BankAcount ba = new BankAcount(idAcount, titularName);
+        System.out.print("Is there an initial deposit (y/n)");
+        String initialQuestion = sc.nextLine();
+        if (initialQuestion == "y"){
+            System.out.println("Enter the initial deposit");
+            ba.initialDeposit = sc.nextDouble();
+        }
+        System.out.println("Account data");
+        System.out.println("Updated account data:");
+        System.out.printf("Account %f, Holder: %s, Balance: $ %d", ba.getIdAcount(), ba.getTitularName(), ba.getSaldo());
 
 
 
-        
+
+
+
     }
 }
